@@ -1,0 +1,123 @@
+body    {
+    padding: 0;
+    margin: 0;
+
+    background: #d8f8ff;
+}
+
+
+nav#mainNavBar {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 4rem;
+    background: #d8f8ff;
+
+    display: grid;
+    box-sizing: border-box;
+    padding: 0 20% 0 20%;
+    grid-template-columns: repeat(4, 1fr);
+    z-index: 1000;
+    box-shadow: 0 2px 5px 1px rgba(0,0,0,0.45);
+}
+
+nav#mainNavBar div {
+    display: inline-block;
+    background-color: #ccecf3;
+    height: 100%;
+    position: relative;
+
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 0.65rem;
+    left: 0; top: 0;
+}
+nav#mainNavBar div:nth-child(even) {
+    background-color: #d0f0f7;
+}
+
+.center   {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    position: absolute; /* Positions relative to the next parent that relies on its own position e.g. position: relative */
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+#viewDataContainer   {
+    display: grid;
+    position: relative;
+    height: 60vh;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0;
+    top: 4em;
+
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 8fr 1fr;
+}
+
+#sideBar::-webkit-scrollbar { width: 0 !important}
+#sideBar    {
+    display: inline-block;
+    background-color: #89bbbf;
+    grid-column: 1;
+    max-height: 100%;
+    overflow: scroll;
+}
+
+
+#mainBox::-webkit-scrollbar { width: 0 !important}
+#mainBox    {
+    background-color: #b0d7da;
+    grid-column: 2 / -1;
+    max-height: 100%;
+    overflow: scroll;
+}
+#separator    {
+    background-color: #75959b;
+    grid-column: 1 / -1;
+}
+
+
+.listItem{
+    display: block;
+    position: relative;
+    min-height: 20%;
+    width: 100%;
+    background-color: #dcfcff;
+    border-bottom: 1px solid #94aeb6;
+
+    padding: 0;
+    margin: 0;
+}
+.listItem:nth-child(odd)   {
+    background-color: #d7f6f9;
+}
+
+
+.listItemTitle{
+    padding: 1rem 0 0 0;
+    margin: 0;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #23626e;
+}
+.listItem hr    {
+    border: none;
+    border-bottom: 1px solid #23626e;
+    width: 85%;
+}
+
+.listItemDesc   {
+    margin: 0;
+    text-align: center;
+    padding: 1rem 1rem 1rem 1rem;
+    font-size: 0.8rem;
+    font-family: sans-serif;
+    color: #15323b;
+}

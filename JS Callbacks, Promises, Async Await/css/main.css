@@ -1,0 +1,54 @@
+body     {
+    margin: 0px;
+    padding: 0px;
+}
+
+#wrapper  {
+    position: absolute;
+    margin: 1em;
+    width: calc(100vw - (2 * 1em));
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1em;
+    grid-auto-rows: minmax(200px, auto);
+    justify-items: stretch;
+    /* align-items: start; */
+}
+
+#wrapper > div    {
+    background-color: #9d9d9d;
+    padding: 30px;
+    padding-top: 90px;
+    font-family: "monospace", sans-serif;
+    font-size: 1em;
+    text-align: center;
+}
+
+#wrapper > div:nth-child(odd)    {
+    background-color: #d1d1d1;
+}
+
+#box2    {
+    grid-column:2 / -1;
+    height: 640px;
+}
+
+#box3    {
+    grid-column: 1 / -1;
+}
+
+button  {
+    height: 100px;
+    background-color: indianred;
+    display: block;
+    color: white;
+}
+
+button:nth-child(odd)   {
+    background-color: darkred;
+}
+
+/* #container > div:after    {
+    content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius possimus ad id quisquam quibusdam, omnis autem libero itaque veritatis dolorem ab laudantium deleniti sapiente totam qui incidunt aliquid non aliquam dignissimos laborum tempore corrupti animi quo quam! Ut impedit ea magnam eligendi eius, eveniet magni ipsum autem iusto tempore cumque laborum doloribus. Odit blanditiis saepe officiis earum quibusdam, quaerat necessitatibus!";
+} */

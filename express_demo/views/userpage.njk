@@ -1,0 +1,10 @@
+{% extends "user-boiler.njk" %}
+
+{% block userdata %}
+    {{ super() }} {# This adds stuff from the parent block#}
+    <ul>
+        {% for key, value in user %}
+            <li>{{ key }}: {{ value }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
