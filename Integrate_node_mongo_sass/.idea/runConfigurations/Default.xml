@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Default" type="NodeJSConfigurationType" node-parameters="./node_modules/nodemon/bin/nodemon" path-to-js-file="app.js" working-dir="$PROJECT_DIR$">
+    <envs>
+      <env name="DEBUG" value="integrate-node-mongo-sass:*" />
+    </envs>
+    <EXTENSION ID="com.jetbrains.nodejs.run.NodeJSStartBrowserRunConfigurationExtension">
+      <browser start="true" url="http://localhost:8000/" />
+    </EXTENSION>
+    <method v="2" />
+  </configuration>
+</component>

@@ -1,0 +1,66 @@
+@import "_modern_normalize";
+
+//Doesnt need extension. This will compile into 1 .css file
+@import "_container"; //The underscore '_' is a naming convention stating the file is an imported file (not a main css linked to html)
+@import "_variables"; //These imported files are called partials
+@import "_lists_maps_and_each.scss";
+
+//Dont need calc() anymore. Simply use + - / * by themselves :)
+
+body {
+  background: $dark;
+  color: $light;
+}
+
+
+//A mixin is a like a function that can be called and mixed into any scss element
+//Params can be passed in, and default values can be give as seen
+@mixin centerText($bgColor: none, $isBorder: false) {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+
+  background: $bgColor;
+  @if ($isBorder == true) { //Could just use $isBorder but just demonstrating...
+    border: 2px solid $light;
+  }@else{
+    border: none;
+  }
+}
+
+
+h1  {
+  font-family: serif;
+  text-decoration: underline;
+  @include centerText(#009185, true);
+}
+
+$params: #cc8877, false;
+
+h2 {
+  //Extend grabs all properties from h1
+  @extend h1;
+  font-family: sans-serif;
+  font-size: $subTitleSize;
+  @include centerText($params...);
+}
+
+#btn1 {
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  color: darken($yellow, 20);
+
+  li {
+    color: $yellow;
+
+    &:hover {
+      color: lighten($yellow, 30);
+      font-weight: bold;
+    }
+  }
+}

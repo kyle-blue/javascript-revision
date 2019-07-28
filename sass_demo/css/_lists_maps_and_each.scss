@@ -1,0 +1,45 @@
+//We also have @while (which I dont need to show, and @each (a foreach for a list or map)
+
+$myList: 21, 412, "Hello", gregory, 1fr, 100%;
+
+@each $item in $myList  {
+  @debug "LIST ITEM: " + $item;
+}
+
+$pixelValues: 132px, 50px, 100px, 40px, 10px;
+
+@debug "";
+@each $px in $pixelValues{
+  @debug "PixelValue: " + $px;
+}
+
+
+
+
+
+//This is a map basically a list of unique key val pairs
+$myMap: (
+  someKey: someVal,
+  otherKey: otherVal,
+  color: #64ffe9,
+  color2: #d22968,
+  myWord: "Hello"
+);
+
+//We can also iterate through a map
+@debug "";
+@each $key, $val in $myMap{
+  @debug "Key: " + $key + " --- Val: " + $val;
+}
+
+@function getColor($key, $map: $myMap){
+  @return map_get($map, $key);
+}
+
+.exampleClass {
+  //We the get any element in the map with map_get($mapName, keyName)
+  background-color: map_get($myMap, color);
+
+  //Or we can use the function to return it
+  color: getColor(color2);
+}
